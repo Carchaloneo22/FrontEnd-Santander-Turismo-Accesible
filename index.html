@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO básico -->
+    <title>Santander Accesible — Turismo Accesible en Santander, Colombia</title>
+    <meta name="description" content="Plataforma de turismo inclusivo en Santander, Colombia. Conectamos viajeros con empresas que ofrecen experiencias accesibles para personas con discapacidad visual, auditiva y motriz." />
+    <meta name="keywords" content="turismo accesible, Santander Colombia, turismo inclusivo, discapacidad, accesibilidad, Barichara, Socorro, planes turísticos, hospedaje accesible, transporte adaptado" />
+    <meta name="author" content="Santander Accesible" />
+    <meta name="robots" content="index, follow" />
+    <!-- URLs absolutas (canonical + Open Graph + Twitter + JSON-LD): apuntan al
+         dominio donde HOY se sirve el sitio, para que el compartir en redes
+         resuelva la portada. EN PRODUCCIÓN cambiar este dominio por el final. -->
+    <link rel="canonical" href="https://dev.turismo-santander.desarrollos-pablo-carvajal.com/" />
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Santander Accesible" />
+    <meta property="og:title" content="Santander Accesible — Turismo Accesible en Santander" />
+    <meta property="og:description" content="Conectamos viajeros con empresas turísticas que garantizan accesibilidad real en Santander, Colombia." />
+    <meta property="og:image" content="https://dev.turismo-santander.desarrollos-pablo-carvajal.com/img/og-cover.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://dev.turismo-santander.desarrollos-pablo-carvajal.com/" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Santander Accesible — Turismo Accesible en Santander" />
+    <meta name="twitter:description" content="Plataforma de turismo inclusivo en Santander, Colombia." />
+    <meta name="twitter:image" content="https://dev.turismo-santander.desarrollos-pablo-carvajal.com/img/og-cover.webp" />
+
+    <!-- Favicon & PWA -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#1a6b3c" />
+
+    <!-- Fuentes: se cargan auto-hospedadas vía @fontsource en src/main.tsx
+         (sin peticiones a Google → sin terceros ni consentimiento). -->
+
+    <!-- El hero del Home NO es lo primero que se ve: la app arranca en la pantalla
+         de bienvenida (IntroSplash), que tiene su propio video. Precargar aquí el
+         póster y el video del hero los descargaba SIN usarse todavía (el navegador
+         avisaba «preloaded but not used») y competía ancho de banda con la intro,
+         justo lo contrario de lo que necesita un móvil con poca señal. Además
+         `as="video"` no es un valor válido de preload. Por eso se elimina el
+         preload: el hero carga su póster (LCP de esa vista) cuando el usuario entra
+         al portal, con fetchpriority="high" en la propia etiqueta. -->
+    <link rel="preload" as="image" href="/img/Intro/introsplashgobernacion.webp" fetchpriority="high" />
+
+    <!-- Datos estructurados JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Santander Accesible",
+      "description": "Plataforma de turismo inclusivo y accesible en Santander, Colombia",
+      "url": "https://dev.turismo-santander.desarrollos-pablo-carvajal.com",
+      "logo": "https://dev.turismo-santander.desarrollos-pablo-carvajal.com/favicon.svg",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Santander",
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "Colombia"
+        }
+      },
+      "sameAs": [
+        "https://www.facebook.com/share/1RiJvhh1Gp/",
+        "https://www.instagram.com/d4iv_id",
+        "https://www.tiktok.com/@d4ividd"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+57-317-461-3395",
+        "contactType": "customer service",
+        "availableLanguage": ["Spanish"]
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+</html>
