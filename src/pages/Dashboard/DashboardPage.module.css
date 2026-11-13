@@ -1,0 +1,118 @@
+.wrap {
+  min-height: 100vh;
+  background: var(--color-surface-alt, #eef2f6);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  color: var(--color-primary, #1a6b3c);
+  text-decoration: none;
+}
+.logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.salir {
+  padding: 0.5rem 1.1rem;
+  border: 1.5px solid var(--color-primary, #1a6b3c);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-primary, #1a6b3c);
+  font-weight: 600;
+  cursor: pointer;
+}
+.salir:hover {
+  background: var(--color-primary, #1a6b3c);
+  color: #fff;
+}
+
+.main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+.saludo {
+  margin: 0 0 0.25rem;
+  font-size: 1.7rem;
+}
+.saludoSub {
+  color: #4a5568;
+  margin: 0 0 1.75rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.stat {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
+}
+.statNum {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary, #1a6b3c);
+  line-height: 1;
+}
+.statLbl {
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.cardIcono {
+  font-size: 1.7rem;
+}
+.cardTitulo {
+  margin: 0.3rem 0 0;
+  font-size: 1.1rem;
+}
+.cardText {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin: 0;
+  flex: 1;
+}
+.cardCta {
+  color: var(--color-primary, #1a6b3c);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+.cardCta:hover {
+  text-decoration: underline;
+}

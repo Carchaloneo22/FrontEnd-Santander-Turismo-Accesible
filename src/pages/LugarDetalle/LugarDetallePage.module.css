@@ -1,0 +1,62 @@
+.cabecera {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(16px, 3vw, 32px);
+  align-items: stretch;
+}
+.foto {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.titulares {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+.etiquetas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Cómo llegar y contacto ── tarjeta para no terminar la ficha en texto plano. */
+.ubicacion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(16px, 3vw, 28px);
+  background: var(--surface-card, var(--surface));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+.ubicacionGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: clamp(16px, 3vw, 28px);
+  align-items: start;
+}
+
+/* Móvil: una sola columna, foto arriba. */
+@media (max-width: 720px) {
+  .cabecera,
+  .ubicacionGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .foto {
+    min-height: 200px;
+  }
+}

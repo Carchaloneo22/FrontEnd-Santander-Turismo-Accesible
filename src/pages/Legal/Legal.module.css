@@ -1,0 +1,72 @@
+.wrap {
+  padding: 2.5rem 1rem 4rem;
+  line-height: 1.65;
+}
+
+.wrap p,
+.wrap li {
+  color: var(--color-text, #1a1a1a);
+}
+
+.borrador {
+  display: inline-block;
+  background: #fff6e0;
+  color: #7a5a00;
+  border: 1px solid #e6c65c;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.updated {
+  color: var(--color-text-muted, #4a4a4a);
+  font-size: 0.9rem;
+}
+
+.lista {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.enlace {
+  color: var(--color-primary, #1a6b3c);
+  text-decoration: underline;
+}
+
+.btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--color-primary, #1a6b3c);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tablaWrap {
+  overflow-x: auto;
+}
+
+.tabla {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 640px;
+  font-size: 0.88rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.tabla th,
+.tabla td {
+  border: 1px solid var(--color-border, #d4dde4);
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.tabla th {
+  background: var(--color-primary, #1a6b3c);
+  color: #fff;
+}

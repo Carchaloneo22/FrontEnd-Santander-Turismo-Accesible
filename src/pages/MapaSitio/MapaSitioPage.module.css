@@ -1,0 +1,33 @@
+.wrap {
+  padding: 2.5rem 1rem 4rem;
+}
+
+.intro {
+  color: var(--color-text-muted, #4a4a4a);
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem 2rem;
+}
+
+.bloque ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.bloque a {
+  color: var(--color-primary, #1a6b3c);
+  text-decoration: none;
+}
+
+.bloque a:hover,
+.bloque a:focus-visible {
+  text-decoration: underline;
+}
