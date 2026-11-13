@@ -1,0 +1,171 @@
+.page {
+  position: fixed;
+  inset: 0;
+  background: #000;
+}
+.canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  pointer-events: none; /* el drag pasa al canvas... */
+}
+
+/* El HUD se agrupa arriba y abajo: el centro de la pantalla queda LIBRE para
+   ver la sala (antes los chips de municipio la cruzaban por la mitad). */
+.grupoSuperior,
+.grupoInferior {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Solo los controles reciben clic; el resto deja pasar el arrastre al canvas. */
+.back,
+.audioToggle,
+.place,
+.enter,
+.vrNote {
+  pointer-events: auto;
+}
+
+/* Equivalente accesible de la navegación (la real son los nodos del piso). */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.srOnly button {
+  pointer-events: auto;
+}
+
+.topBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.back {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.topActions {
+  display: flex;
+  gap: 8px;
+}
+
+.audioToggle {
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: var(--font-head);
+  font-weight: 600;
+}
+.audioToggle[aria-pressed='true'] {
+  border-color: var(--purple);
+}
+
+.places {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 90%;
+}
+.place {
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: var(--font-head);
+  font-weight: 600;
+}
+.place.active {
+  background: var(--purple);
+  border-color: var(--purple);
+}
+
+.enter {
+  background: var(--purple);
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.5);
+}
+
+.vrNote {
+  max-width: 420px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  transition: opacity 0.5s ease;
+}
+
+/* La pista se lee una vez y a partir de ahí estorba: se retira sola y en cuanto
+   el visitante se mueve. Sigue en el DOM (aria-hidden) para no dar un salto. */
+.vrNoteOculta {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vrNote {
+    transition: none;
+  }
+}
+
+/* ── Overlay de carga ── */
+.loading {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 600;
+  pointer-events: none;
+}
