@@ -1,0 +1,445 @@
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: var(--color-surface-alt, #eef2f6);
+}
+
+.card {
+  width: min(440px, 100%);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.12);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  color: var(--color-primary, #1a6b3c);
+  margin-bottom: 0.75rem;
+}
+.logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.titulo {
+  margin: 0.25rem 0 0;
+  font-size: 1.55rem;
+}
+.sub {
+  margin: 0.25rem 0 1.25rem;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 0.85rem;
+}
+.campo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.input {
+  padding: 0.65rem 0.8rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+}
+.input:focus-visible {
+  outline: none;
+  border-color: var(--color-primary, #1a6b3c);
+  box-shadow: 0 0 0 3px rgba(26, 107, 60, 0.16);
+}
+.input[aria-invalid='true'] {
+  border-color: #c0392b;
+}
+.error {
+  color: #c0392b;
+  font-size: 0.8rem;
+}
+
+.errorApi {
+  margin: 0.25rem 0 0;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #e3b7b1;
+  border-radius: 8px;
+  background: #fdecea;
+  color: #c0392b;
+  font-size: 0.85rem;
+}
+
+.entreLinea {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.6rem;
+}
+.linkPeq {
+  font-size: 0.82rem;
+  color: var(--color-primary, #1a6b3c);
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  margin: 0.15rem 0 0.9rem;
+}
+.check input {
+  margin-top: 3px;
+  accent-color: var(--color-primary, #1a6b3c);
+}
+.check a {
+  color: var(--color-primary, #1a6b3c);
+  text-decoration: underline;
+}
+
+.btn {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 9px;
+  background: var(--color-primary, #1a6b3c);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.25rem;
+  transition: filter 0.15s;
+}
+.btn:hover {
+  filter: brightness(1.06);
+}
+
+.pie {
+  text-align: center;
+  font-size: 0.88rem;
+  margin: 1.1rem 0 0;
+  color: #4a5568;
+}
+.pie a {
+  color: var(--color-primary, #1a6b3c);
+  font-weight: 600;
+}
+.demo {
+  text-align: center;
+  font-size: 0.74rem;
+  color: #94a3b8;
+  margin: 0.6rem 0 0;
+}
+
+.volver {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+.volver a {
+  color: #64748b;
+}
+
+.exito {
+  text-align: center;
+  padding: 0.5rem 0 0;
+}
+.exitoIcono {
+  font-size: 2.75rem;
+  line-height: 1;
+}
+
+/* ───────────────────────── Wizard de registro por tipos ───────────────────────── */
+
+/* Indicador de progreso por pasos (lista ordenada, accesible). */
+.stepper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin: 0 0 1.35rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+.paso {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+.pasoNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid #cbd5e1;
+  font-weight: 700;
+  font-size: 0.75rem;
+  background: #fff;
+}
+.pasoActivo {
+  color: var(--color-primary, #1a6b3c);
+  font-weight: 700;
+}
+.pasoActivo .pasoNum {
+  border-color: var(--color-primary, #1a6b3c);
+  color: var(--color-primary, #1a6b3c);
+  box-shadow: 0 0 0 3px rgba(26, 107, 60, 0.14);
+}
+.pasoHecho {
+  color: #1b8a3f;
+}
+.pasoHecho .pasoNum {
+  background: #1b8a3f;
+  border-color: #1b8a3f;
+  color: #fff;
+}
+
+/* Elección de tipo: tarjetas-radio. */
+.tipoGrid {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0 0 0.5rem;
+}
+.tipoCard {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  text-align: left;
+  padding: 1rem 1.1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 13px;
+  background: #fff;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.tipoCard:hover {
+  border-color: #bcd6c6;
+}
+.tipoCard:focus-visible {
+  outline: none;
+  border-color: var(--color-primary, #1a6b3c);
+  box-shadow: 0 0 0 3px rgba(26, 107, 60, 0.16);
+}
+.tipoCardActiva {
+  border-color: var(--color-primary, #1a6b3c);
+  box-shadow: 0 0 0 3px rgba(26, 107, 60, 0.14);
+}
+.tipoIcono {
+  font-size: 1.7rem;
+  line-height: 1;
+}
+.tipoTitulo {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+.tipoDesc {
+  margin: 3px 0 0;
+  font-size: 0.83rem;
+  color: #4a5568;
+  line-height: 1.4;
+}
+
+/* Área de texto reutilizable (mismo estilo que .input). */
+.textarea {
+  padding: 0.65rem 0.8rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  resize: vertical;
+  min-height: 92px;
+}
+.textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-primary, #1a6b3c);
+  box-shadow: 0 0 0 3px rgba(26, 107, 60, 0.16);
+}
+.textarea[aria-invalid='true'] {
+  border-color: #c0392b;
+}
+
+/* Campo de archivo accesible. */
+.archivo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 1rem;
+}
+.archivoEtiqueta {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.archivoAyuda {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+.archivoCaja {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 0.7rem 0.8rem;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+.archivoCaja[data-con-archivo='true'] {
+  border-style: solid;
+  border-color: #1b8a3f;
+  background: #f0fdf4;
+}
+.archivoBtn {
+  padding: 0.45rem 0.85rem;
+  border: 1.5px solid var(--color-primary, #1a6b3c);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--color-primary, #1a6b3c);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.archivoBtn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 107, 60, 0.18);
+}
+.archivoNombre {
+  font-size: 0.82rem;
+  color: #1e293b;
+  word-break: break-all;
+}
+.archivoVacio {
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+/* Fila de botones navegación (atrás / siguiente). */
+.filaBtns {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.75rem;
+}
+.filaBtns .btn {
+  flex: 1;
+  margin-top: 0;
+}
+.btnSecundario {
+  flex: 0 0 auto;
+  padding: 0.8rem 1.1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9px;
+  background: #fff;
+  color: #334155;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btnSecundario:hover {
+  background: #f1f5f9;
+}
+
+/* Bloques de consentimiento (checkbox + texto legal). */
+.consentimiento {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0.85rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 11px;
+  margin-bottom: 0.85rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.consentimiento input {
+  margin-top: 3px;
+  accent-color: var(--color-primary, #1a6b3c);
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+}
+.consentimiento a {
+  color: var(--color-primary, #1a6b3c);
+  text-decoration: underline;
+}
+
+/* Resumen final. */
+.resumen {
+  margin: 0 0 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+  overflow: hidden;
+}
+.resumenFila {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.86rem;
+  border-bottom: 1px solid #eef2f6;
+}
+.resumenFila:last-child {
+  border-bottom: none;
+}
+.resumenClave {
+  color: #64748b;
+}
+.resumenValor {
+  font-weight: 600;
+  text-align: right;
+  color: #1e293b;
+  word-break: break-word;
+}
+
+/* Aviso de estado (p. ej. registro en modo simulado). */
+.aviso {
+  padding: 0.7rem 0.85rem;
+  border-radius: 9px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  font-size: 0.83rem;
+  margin: 0.5rem 0 0;
+}
+
+/* Estado "procesando" con texto de paso en curso. */
+.procesando {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+/* Texto solo para lectores de pantalla. */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

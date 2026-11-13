@@ -1,0 +1,162 @@
+/* AuthShell + estilos compartidos de autenticación (estilo bandera Santander). */
+
+/* Paleta de marca Santander (misma que la bandera del Home y el favicon). */
+.wrap {
+  --sa-verde: #1a6b3c;
+  --sa-verde-vivo: #1b8a3f;
+  --sa-verde-oscuro: #124d2b;
+  --sa-amarillo: #ffcf00;
+  --sa-rojo: #d1141a;
+  --sa-texto: #1e293b;
+  --sa-texto-suave: #4a5568;
+  --sa-borde: #cbd5e1;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background: #eef2f6;
+  font-family: var(--font-body, 'Open Sans', sans-serif);
+  color: var(--sa-texto);
+}
+
+@media (min-width: 900px) {
+  .wrap {
+    grid-template-columns: 1.05fr 1fr;
+  }
+}
+
+/* ── Panel de bienvenida (foto + degradado verde + marca) ── */
+.hero {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, rgba(18, 77, 43, 0.55) 0%, rgba(18, 77, 43, 0.88) 100%),
+    url('/img/destinos/barichara.webp') center / cover no-repeat;
+}
+@media (min-width: 900px) {
+  .hero {
+    display: block;
+  }
+}
+
+/* Franjas tricolor como remate superior del panel. */
+.heroFranjas {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 2;
+}
+
+.heroBody {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.bandera {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+.marcaTexto {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  color: #fff;
+  letter-spacing: 0.04em;
+  font-family: var(--font-head, 'Montserrat', sans-serif);
+}
+.marcaTexto strong {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 800;
+}
+.marcaSep {
+  color: var(--sa-amarillo);
+  font-weight: 800;
+}
+.marcaAccesible {
+  font-size: clamp(1.1rem, 1.9vw, 1.6rem);
+  font-weight: 600;
+  color: var(--sa-amarillo);
+}
+.lema {
+  margin: 1rem 0 0;
+  max-width: 34ch;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  line-height: 1.5;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* ── Columna de contenido ── */
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.25rem, 4vw, 2.5rem) 1rem;
+}
+
+.card {
+  width: 100%;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 14px 48px rgba(18, 77, 43, 0.12);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+}
+.sm {
+  max-width: 440px;
+}
+.md {
+  max-width: 560px;
+}
+.lg {
+  max-width: 720px;
+}
+
+/* Marca compacta: solo en móvil (el hero desaparece < 900px). */
+.marcaMovil {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-head, 'Montserrat', sans-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  color: var(--sa-verde);
+  text-decoration: none;
+}
+.marcaMovil strong {
+  font-weight: 800;
+}
+@media (min-width: 900px) {
+  .marcaMovil {
+    display: none;
+  }
+}
+
+/* ── Franjas tricolor reutilizables ── */
+.franjas {
+  display: flex;
+  width: 100%;
+  height: 8px;
+}
+.franjaVerde {
+  flex: 3;
+  background: var(--sa-verde-vivo, #1b8a3f);
+}
+.franjaAmarilla {
+  flex: 1;
+  background: var(--sa-amarillo, #ffcf00);
+}
+.franjaRoja {
+  flex: 1;
+  background: var(--sa-rojo, #d1141a);
+}

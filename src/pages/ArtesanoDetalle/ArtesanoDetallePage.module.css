@@ -1,0 +1,69 @@
+.cabecera {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: clamp(16px, 3vw, 32px);
+  align-items: center;
+}
+.foto {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.titulares {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.etiquetas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.productos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.producto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  box-shadow: var(--shadow-card);
+}
+.productoFoto {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: calc(var(--radius) - 4px);
+  overflow: hidden;
+}
+.contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(16px, 3vw, 28px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 720px) {
+  .cabecera {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
