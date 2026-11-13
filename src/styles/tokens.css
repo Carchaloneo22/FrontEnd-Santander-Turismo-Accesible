@@ -1,0 +1,39 @@
+/* src/styles/tokens.css — design tokens globales */
+:root {
+  --purple: #7c3aed;
+  --purple-light: #a855f7;
+  --purple-dark: #5b21b6;
+  --dark-nav: #0f172a;
+  --dark-footer: #1e293b;
+
+  --text: #1e293b;
+  --text-soft: #64748b;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+
+  --font-head: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+
+  --radius: 14px;
+  --shadow: 0 4px 24px rgba(124, 58, 237, 0.1);
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.08);
+  /* ── Tipografía ── */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+  --fs-4xl: clamp(2rem, 5vw, 3.4rem);
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extra: 800;
+
+  --lh-tight: 1.15;
+  --lh-normal: 1.55;
+  --lh-relaxed: 1.7;
+}
