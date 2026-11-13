@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Bandera de Santander — Santander Accesible">
+  <!--
+    Favicon inspirado en la BANDERA DEL DEPARTAMENTO DE SANTANDER (Colombia):
+    franjas horizontales verde / amarillo (dorado) / negro, barra roja vertical
+    en el asta y estrellas blancas (una por provincia). Simplificado para leerse
+    nítido a 16px: verde de marca dominante, barra roja con tres estrellas.
+    Paleta coherente con el banner y theme-color (#1a6b3c).
+  -->
+  <defs>
+    <clipPath id="recorte"><rect width="32" height="32" rx="6.5"/></clipPath>
+    <path id="estrella" d="M0,-2.4 L0.56,-0.77 L2.28,-0.74 L0.9,0.29 L1.41,1.94 L0,0.95 L-1.41,1.94 L-0.9,0.29 L-2.28,-0.74 L-0.56,-0.77 Z"/>
+  </defs>
+  <g clip-path="url(#recorte)">
+    <!-- Campo verde (base de la bandera y de la marca) -->
+    <rect width="32" height="32" fill="#1a6b3c"/>
+    <!-- Franja dorada y vena negra central (recursos naturales) -->
+    <rect y="9" width="32" height="14" fill="#f5c518"/>
+    <rect y="13" width="32" height="6" fill="#111111"/>
+    <!-- Barra roja vertical del asta (nobleza y heroísmo) -->
+    <rect width="11" height="32" fill="#d81e05"/>
+    <!-- Estrellas blancas sobre la barra roja -->
+    <g fill="#ffffff">
+      <use href="#estrella" transform="translate(5.5 8)"/>
+      <use href="#estrella" transform="translate(5.5 16)"/>
+      <use href="#estrella" transform="translate(5.5 24)"/>
+    </g>
+  </g>
+</svg>
