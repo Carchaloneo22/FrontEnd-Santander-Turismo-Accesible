@@ -1,0 +1,138 @@
+.cabecera {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 720px) {
+  .cabecera {
+    grid-template-columns: 1fr;
+  }
+}
+.foto {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.titulares {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.etiquetas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bloque {
+  margin: 1.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Datos importantes */
+.datos {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.dato {
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  background: var(--color-surface-alt, #f8fafc);
+}
+.dato dt {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted, #64748b);
+  margin-bottom: 0.3rem;
+}
+.dato dd {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text, #1e293b);
+  line-height: 1.5;
+}
+
+/* Control de recursos: toggle "solo destacados" + aviso de ocultos */
+.controlRecursos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-top: 2rem;
+}
+.filtroDestacados {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 999px;
+  background: var(--color-surface, #fff);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text, #1e293b);
+  cursor: pointer;
+}
+.filtroDestacados:hover {
+  border-color: var(--color-primary, #1a6b3c);
+}
+.filtroDestacados:focus-within {
+  outline: 2px solid var(--color-primary, #1a6b3c);
+  outline-offset: 2px;
+}
+.filtroDestacados input {
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--color-primary, #1a6b3c);
+  cursor: pointer;
+}
+.ocultosAviso {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted, #64748b);
+}
+.ocultosAviso:empty {
+  display: none;
+}
+.enlaceAccion {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 700;
+  color: var(--color-primary, #1a6b3c);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.enlaceAccion:hover {
+  text-decoration: none;
+}
+
+/* Secciones de recursos */
+.recursos {
+  margin: 2rem 0;
+}
+.recursosTitulo {
+  margin-bottom: 1rem;
+}
+.rejilla {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}

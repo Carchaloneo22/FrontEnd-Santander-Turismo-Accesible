@@ -1,0 +1,172 @@
+/* ── Hero ── banda con icono + título + clasificación, sobre un fondo tintado
+   para que la ficha no arranque plana. */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 28px);
+  padding: clamp(20px, 4vw, 36px);
+  border-radius: var(--radius);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--brand-green) 16%, var(--surface)),
+    var(--surface-card, var(--surface))
+  );
+  border: 1px solid color-mix(in srgb, var(--brand-green) 22%, var(--border));
+}
+.heroIcono {
+  flex-shrink: 0;
+  width: clamp(56px, 10vw, 76px);
+  height: clamp(56px, 10vw, 76px);
+  display: grid;
+  place-items: center;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  border-radius: 50%;
+  background: var(--surface-card, var(--surface));
+  box-shadow: var(--shadow-card);
+}
+.heroTexto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.eyebrow {
+  font-family: var(--font-head);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--brand-green-hover, var(--brand-green));
+}
+.etiquetas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── Layout principal + aside ── */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 32px);
+  align-items: start;
+}
+.principal {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 32px);
+  min-width: 0;
+}
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vw, 20px);
+  position: sticky;
+  top: 90px;
+  min-width: 0;
+}
+
+.bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── «Qué incluye» ── definición con icono por fila, en tarjetas, no texto plano. */
+.ficha {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.fichaFila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  align-items: baseline;
+  padding: 12px 14px;
+  background: var(--surface-card, var(--surface));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.fichaFila dt {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-head);
+  font-weight: var(--fw-semibold);
+  color: var(--text);
+  min-width: 150px;
+  margin: 0;
+}
+.fichaFila dd {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.lugares {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.lugares a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brand-green) 10%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--brand-green) 28%, var(--border));
+  color: var(--brand-green-hover, var(--brand-green));
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+.lugares a::before {
+  content: '📍';
+}
+.lugares a:hover {
+  background: color-mix(in srgb, var(--brand-green) 18%, var(--surface));
+}
+.lugares a:focus-visible {
+  outline: 2px solid var(--brand-green);
+  outline-offset: 2px;
+}
+
+/* ── Contacto ── tarjeta propia dentro del aside. */
+.contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(16px, 3vw, 22px);
+  background: var(--surface-card, var(--surface));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .aside {
+    position: static;
+    top: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .etiquetas {
+    justify-content: center;
+  }
+}
