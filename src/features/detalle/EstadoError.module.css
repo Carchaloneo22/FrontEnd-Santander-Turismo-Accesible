@@ -1,0 +1,28 @@
+.caja {
+  padding: clamp(64px, 12vw, 120px) 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+.contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.volver {
+  color: var(--purple);
+  font-family: var(--font-head);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  border-radius: 4px;
+}
+.volver:hover {
+  text-decoration: underline;
+}
+.volver:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 2px;
+}

@@ -1,0 +1,56 @@
+.caja {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--brand-green) 12%, var(--surface)),
+    var(--surface-card, var(--surface))
+  );
+  border: 1px solid color-mix(in srgb, var(--brand-green) 30%, var(--border));
+  box-shadow: var(--shadow-card);
+}
+.montoWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+.prefijo {
+  font-family: var(--font-head);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-soft);
+}
+.monto {
+  font-family: var(--font-head);
+  font-weight: var(--fw-extra);
+  font-size: var(--fs-2xl);
+  line-height: 1;
+  color: var(--brand-green-hover, var(--brand-green));
+}
+.nota {
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+}
+.ayuda {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--text-soft);
+}
+
+/* Sin monto real (Consultar): la caja se vuelve neutra y el monto se apaga, para
+   no simular una cifra que no existe. */
+.tenue {
+  background: color-mix(in srgb, var(--text-soft) 8%, var(--surface));
+  border-color: var(--border);
+}
+.tenue .monto {
+  font-size: var(--fs-xl);
+  color: var(--text);
+}
